@@ -10,10 +10,6 @@ r = redis.StrictRedis(host='localhost', port=6379, db=0)
 def index():
    return render_template('index.html')
 
-@app.route('/getOutput/', methods=['POST'])
-def output():
-    return request.form['url']
-
 @app.route('/generateURL/', methods=['POST'])
 def generate_url():
     user_input = request.form['url']
@@ -40,14 +36,6 @@ def redirect_user(url_key):
         else:
              return redirect(url_value)
 
-
-# @app.route('/<key>')
-# def keyTest(key):
-#     value = r.get(key)
-#     if (value is None):
-#         return "GET('" + key + "') --> None"
-#     else:
-#         return "GET('" + key + "') --> " + value
 
 if __name__ == '__main__':
    app.run()
