@@ -1,2 +1,2 @@
 lil_link/static/startbootstrap-bare-gh-page/* linguist-vendored
-
+*.rb linguist-language=Python
