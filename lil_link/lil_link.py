@@ -1,28 +1,30 @@
-from flask import Flask, redirect, request, render_template, url_for
+from flask import Flask, redirect, request, render_template, url_for, flash
 from flask_reggie import Reggie
 import redis
 import validators
 
 app = Flask(__name__)
+app.secret_key = "super_secret_key"
 Reggie(app)
 r = redis.StrictRedis(host='localhost', port=6379, db=0)
 
 @app.route('/')
-def index(shortening_worked = None, url_key = None):
-    if (shortening_worked is None):
-        return render_template('index.html')
-    else:
-        return render_template('shortening_result.html', shortening_worked = shortening_worked, urlkey = url_key)
+def index():
+    return render_template('index.html')
 
 @app.route('/generateURL/', methods=['POST'])
 def generate_url():
     user_input = request.form['url']
     if (not validators.url(user_input)):
-        return redirect(url_for('index', shortening_worked = False))
+        error_message = "\"" + user_input + "\" is an invalid URL."
+        flash(error_message, category="error")
+        return redirect(url_for('index'))
     else:
         url_key = hex(r.incr('siteCounter'))[2:]
         r.set(url_key, user_input)
-        return redirect(url_for('index', shortening_worked=True, urlkey = url_key))
+        generated_url = url_for('redirect_user', urlkey = url_key, _external = True)
+        flash('Shortened URL: ' + generated_url, category="success")
+        return redirect(url_for('index'))
 
 @app.route('/<regex("[A-Fa-f0-9]+"):urlkey>')
 def redirect_user(urlkey):
