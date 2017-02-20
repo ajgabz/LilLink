@@ -18,7 +18,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="lil_link.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="lil_link.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lil_link/lil_link.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -70,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lil_link/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+              <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -133,8 +133,8 @@
         <option value="$PROJECT_DIR$/lil_link/templates/success_page.html" />
         <option value="$PROJECT_DIR$/lil_link/templates/base.html" />
         <option value="$PROJECT_DIR$/lil_link/templates/shortening_result.html" />
-        <option value="$PROJECT_DIR$/lil_link/templates/index.html" />
         <option value="$PROJECT_DIR$/lil_link/lil_link.py" />
+        <option value="$PROJECT_DIR$/lil_link/templates/index.html" />
       </list>
     </option>
   </component>
@@ -715,6 +715,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lil_link/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lil_link/lil_link.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -722,14 +730,6 @@
           <folding>
             <element signature="e#0#75#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lil_link/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
