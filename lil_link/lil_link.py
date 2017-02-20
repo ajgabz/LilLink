@@ -28,11 +28,10 @@ def generate_url():
 
 @app.route('/<regex("[A-Fa-f0-9]+"):urlkey>')
 def redirect_user(urlkey):
-    numeric_key = str(int(urlkey, base=16))
-    url_value = r.get(numeric_key)
+    url_value = r.get(urlkey.lower())
     if (url_value is None):
         return render_template('error_page.html', page_title='Redirection Error',
-                               error_message="There is no URL associated with this LilLink URL.")
+                                error_message="There is no URL associated with this LilLink URL.")
     else:
         return redirect(url_value)
 
