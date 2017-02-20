@@ -1,0 +1,14 @@
+appdirs==1.4.0
+click==6.7
+decorator==4.0.11
+Flask==0.12
+Flask-Reggie==0.0.2
+itsdangerous==0.24
+Jinja2==2.9.5
+MarkupSafe==0.23
+packaging==16.8
+pyparsing==2.1.10
+redis==2.10.5
+six==1.10.0
+validators==0.11.2
+Werkzeug==0.11.15
