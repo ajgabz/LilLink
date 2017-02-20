@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+<hr>
+{% if shortening_worked %}
+    <div class="panel panel-success">
+        <div class="panel-heading">Success!</div>
+        <div class="panel-body">Shortened URL: {{ url_for('generateURL', variable = urlkey, _external = True) }}</div>
+    </div>
+{% elif not shortening_worked %}
+    <div class="panel panel-danger">
+        <div class="panel-heading">Error!</div>
+        <div class="panel-body">A shortened URL could not be generated from the user-provided URL.</div>
+    </div>
+{% endif %}
