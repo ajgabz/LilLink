@@ -5,12 +5,19 @@ import validators
 
 app = Flask(__name__)
 app.secret_key = "super_secret_key"
+app.config["DEBUG"] = True
 Reggie(app)
-r = redis.StrictRedis(host='localhost', port=6379, db=0)
+#r = redis.StrictRedis(host='localhost', port=6379, db=0)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('new_index.html')
+
+@app.route('/error')
+def error_test():
+    return render_template('new_error_page.html', page_title='Redirection Error', error_number = 404,
+                           http_error_description = "Page Not Found",
+                           error_message="There is no URL associated with this LilLink URL.")
 
 @app.route('/generateURL/', methods=['POST'])
 def generate_url():

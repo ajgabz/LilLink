@@ -1,0 +1,13 @@
+.container {
+  max-width: 800px; }
+
+.header {
+  margin-top: 3rem;
+  text-align: center; }
+
+.success-box {
+    background-color: #d3d3d3;
+    border-radius: 25px;
+    padding: 20px;
+}
+

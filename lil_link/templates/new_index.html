@@ -1,0 +1,30 @@
+{% extends "new_base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="twelve columns">
+            <form method="post" action="{{ url_for('generate_url') }}">
+                <label for="url-to-shorten">URL</label>
+                <input class="u-full-width" type="url" id="url-to-shorten">
+                <input class="button-primary" type="submit" value="Shorten">
+            </form>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="three columns">&nbsp;</div>
+        <div class="six columns success-box">
+            <h5>New LilLink Generated!</h5>
+            <hr>
+            <label for="original-url">Original URL</label>
+            <input class="u-full-width" type="text" id="original-url" value="http://www.google.com" readonly>
+            <label for="lillink-url">LilLink URL</label>
+            <input class="u-full-width" type="text" id="lillink-url" value="http://www.lillink.com" readonly>
+            <button class="button-primary">Copy LilLink URL</button>
+        </div>
+        <div class="three columns">&nbsp;</div>
+    </div>
+
+
+
+{% endblock %}
