@@ -38,7 +38,6 @@ def redirect_user(urlkey):
         cannot be reached, a RedisError is raised."""
     try:
         url_value = r.get(urlkey.lower())
-        print "Checkpoint A"
         if (url_value is None):
             raise RedirectionError
         else:
