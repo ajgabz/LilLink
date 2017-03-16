@@ -9,7 +9,7 @@ app.config.from_object('config')
 Reggie(app)
 
 # If this app is running under Heroku, then we reconfigure the config variables
-if os.environ.get('HEROKU') is "True":
+if os.environ.get('HEROKU') is not None:
     app.config["DEBUG"] = False
     app.config["SECRET_KEY"] = os.environ.get("DEPLOYED_SECRET_KEY")
     app.config["LILLINK_REDIS_URL"] = os.environ.get("REDIS_URL")
