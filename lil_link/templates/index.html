@@ -1,22 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
-    <h2>Create a new LilLink</h2>
-    <form method="post" action="{{ url_for('generate_url') }}">
-    <div class="form-group">
-        <label for="url">URL:</label>
-        <input type="url" class="form-control" name="url">
+    <div class="row">
+        <div class="twelve columns">
+            <form method="post" action="{{ url_for('generate_url') }}">
+                <label for="url-to-shorten">URL</label>
+                <input class="u-full-width" type="url" name="url" id="url-to-shorten">
+                <input class="button-primary" type="submit" value="Shorten">
+            </form>
+        </div>
     </div>
-        <button type="submit" class="btn btn-default">Shorten URL</button>
-    </form>
-    <div class = "row"></div>
-    {% with messages = get_flashed_messages(with_categories=True) %}
-        {% if messages %}
-            {% for category, message in messages %}
-                <div class="panel panel-info">
-                    <div class="panel-heading">{{ category }}</div>
-                    <div class="panel-body">{{ message }}</div>
-                </div>
-            {% endfor %}
-        {% endif %}
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="row">
+        <div class="three columns">&nbsp;</div>
+        <div class="six columns success-box">
+            <h5>New LilLink Generated!</h5>
+            <hr>
+            <label for="original-url">Original URL</label>
+            <input class="u-full-width" type="text" id="original-url" value="{{ message["original_url"] }}" readonly>
+            <label for="lillink-url">LilLink URL</label>
+            <input class="u-full-width" type="text" id="lillink-url" value="{{ url_for('redirect_user', urlkey = message["shortened_url"], _external = True) }}" readonly>
+            <button class="button-primary">Copy LilLink URL</button>
+        </div>
+        <div class="three columns">&nbsp;</div>
+    </div>
+    {% endfor %}
+    {% endif %}
     {% endwith %}
+
+
+
 {% endblock %}
