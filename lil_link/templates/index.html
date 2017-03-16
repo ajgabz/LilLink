@@ -22,7 +22,6 @@
             <input class="u-full-width" type="text" id="original-url" value="{{ message["original_url"] }}" readonly>
             <label for="lillink-url">LilLink URL</label>
             <input class="u-full-width" type="text" id="lillink-url" value="{{ url_for('redirect_user', urlkey = message["shortened_url"], _external = True) }}" readonly>
-            <button class="button-primary">Copy LilLink URL</button>
         </div>
         <div class="three columns">&nbsp;</div>
     </div>
