@@ -1,2 +1,3 @@
-lil_link/static/startbootstrap-bare-gh-page/* linguist-vendored
+lil_link/static/css/skeleton.css linguist-vendored
+lil_link/static/css/normalize.css linguist-vendored
 *.rb linguist-language=Python
