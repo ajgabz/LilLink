@@ -3,6 +3,7 @@ click==6.7
 decorator==4.0.11
 Flask==0.12
 Flask-Reggie==0.0.2
+gunicorn==19.7.0
 itsdangerous==0.24
 Jinja2==2.9.5
 MarkupSafe==0.23
